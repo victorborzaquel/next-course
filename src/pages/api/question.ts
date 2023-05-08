@@ -5,7 +5,7 @@ type Data = {
   name: string;
 } | {}
 
-export default (req: NextApiRequest, res: NextApiResponse<Data>) => {
+export default function handler(req: NextApiRequest, res: NextApiResponse<Data>) {
   switch (req.method) {
     case 'GET':
       const { id } = req.query as { id: string }
